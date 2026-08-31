@@ -103,16 +103,28 @@ function displayFields(fields) {
 
 // 🔹 QR और फोटो दिखाने वाला function
 function displayPhotoAndQR(fields) {
-  const qrData = `
+  const course = fields['SELECT_COURSE'] || "N/A";
+
+let courseShortName = course;
+
+if (course.trim().toUpperCase() === "ADVANCE DIPLOMA IN COMPUTER APPLICATION") {
+    courseShortName = "ADCA";
+} 
+else if (course.trim().toUpperCase() === "DIPLOMA IN COMPUTER APPLICATION") {
+    courseShortName = "DCA";
+}
+
+const qrData = `
     Certificate No: ${fields['Ms_Nub'] || "N/A"}
     Roll No: ${fields['ROLL_NUB'] || "N/A"}
     Name: ${fields['NAME'] || "N/A"}
     Father's Name: ${fields['FATHERS_NAME'] || "N/A"}
     DOB: ${fields['DOB'] || "N/A"}
-    Course: ${fields['SELECT_COURSE'] || "N/A"}
-  `;
-  qr.clear();
-  qr.makeCode(qrData);
+    Course: ${courseShortName}
+`;
+
+qr.clear();
+qr.makeCode(qrData);
 
   const photoElement = document.getElementById("previewImage");
   const photopreview = document.getElementById("croppedImage");
