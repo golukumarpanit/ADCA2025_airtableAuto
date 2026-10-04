@@ -12,19 +12,160 @@
     color: white;
     border-radius: 9px;
     width: 350px;
-    
+    font-family: 'Times New Roman', serif;
 }
 .badmesamjhe{
     margin-left: 100px;
 }
 .radhekrishan{
-    margin-top: -2%;
+    margin-top: -3%;
+    /* height: 100px; */
+   
     
+    
+}
+.rollanddob{
+    display: flex;
+    padding-top: 5px;
+    margin-bottom: 0;
+}
+.linebetween{
+    height: 2px;
+    width: 160px;
+    background-color: black;
 }
 
 .cert{
     float: right;
+    
 }
+.App {
+    border: solid rgb(5, 13, 122) 5px;
+    width: 210mm;
+    height: 297mm;
+    box-sizing: border-box; /* बॉडर और पैडिंग को A4 साइज के अंदर ही रखेगा */
+    margin: 0 auto;
+    page-break-after: always;
+    display: flex;
+    justify-content: center;
+    /* justify-items: center; */
+    /* text-align: center; */
+}
+.maincontainer, .card {
+    display: flex;
+    height: 100%; /* 297mm फिक्स की जगह 100% रखें */
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.card{
+    display: flex;
+    height: 297mm;
+    width: 210mm;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* .card-body{
+    height: 99%;
+    width: 210mm;
+    border: black solid 2px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
+
+.border-4{
+    height: 90%;
+}
+
+
+.Msnubid {
+    display: flex;
+    text-transform: uppercase;
+    width: 100%;
+    white-space: nowrap;
+}
+.fonttitle{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 12pt;
+}
+.cert-cursive {
+    font-family: 'Cookie', cursive;
+    font-size: 28px;
+    font-weight: 400; /* या normal */
+    color: black
+    
+}
+.dob-underline {
+    display: inline-flex;
+    justify-content: center;
+    flex-grow: 1;
+    
+    /* 1. Border-bottom हटा दिया गया है */
+    border-bottom: none; 
+
+    /* 2. Dotted line के लिए linear-gradient */
+    background-image: linear-gradient(to right, black 50%, transparent 50%);
+    background-size: 8px 3px;         /* डॉट्स की मोटाई 4px से घटाकर 3px की गई */
+    background-repeat: repeat-x;
+    
+    /* 3. टेक्स्ट और डॉट्स की दूरी कम करने के लिए सेटिंग्स */
+    line-height: -3;                 /* टेक्स्ट का बॉटम गैप खत्म करने के लिए */
+    padding-bottom: 0px;              /* हल्का सा गैप */
+    background-position: bottom 1px left 0; /* डॉट्स को थोड़ा ऊपर खिसकाने के लिए */
+
+    text-transform: uppercase;
+    font-family: 'Times New Roman', serif;
+    font-weight: bolder;
+    font-size: 12pt;
+}
+
+.Location_Point{
+    font-family: 'Times New Roman', Times, serif;
+}
+.Address_Rani {
+    display: inline-flex;            /* Taaki yeh bache hue space me hi kaam kare */
+    justify-content: center;         /* Text ko line ke center (beech) me rakhne ke liye */
+    flex-grow: 1;                    /* Bache hue poore page tak line ko kheenchne ke liye */
+    border-bottom: 4px dotted black; /* Moti dotted underline */
+    /* padding-bottom: 2px;             Text aur dots ke beech ki duri */
+    text-transform: uppercase;      
+    font-family: 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: 13pt;
+    
+    
+}
+
+.ManageSingh {
+    display: flex;
+    width: 100%;
+    height: 140px;
+    min-height: 100px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.ManageSingh img {
+    max-height: 130px;
+    object-fit: contain;
+}
+
+@font-face {
+    font-family: 'Comberia';
+    src: url('Cambria-Font-For-Windows.woff') format('woff2'), /* आधुनिक ब्राउज़र सबसे पहले इसे उठाएंगे */
+         url('fonts/comberia.woff') format('woff');   /* पुराना ब्राउज़र होने पर यह लोड होगा */
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
 
 
 .flex-initial {
@@ -72,6 +213,10 @@
     background-color: white;
     color: rebeccapurple;
     cursor: pointer;
+}
+.Roll_nub{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 12pt;
 }
 
 .bichme button:hover,
@@ -219,29 +364,13 @@ padding: 0;
 margin: 0;
 }
 #qrcode img {
-width: 140px;
-height: 140px;
+width: 130px;
+height: 130px;
 margin: 0;
 padding: 0;
 margin-left: 55px;
 }
-@media print {
-    body {
-        margin: 0;
-        padding: 0;
-    }
-    
-    .first-page {
-        display: none;
-    }
-    
-    .second-page {
-        display: block;
-        max-height: fit-content;
-        width: 100%;
-        height: 100%;
-    }
-}
+
 
 /* yaha se second page ka css daal rhe hai */
  body {
@@ -303,9 +432,203 @@ margin-left: 55px;
             height: 155px;
             width: 140px;
             margin-left: 60px; /* Set your desired height here */
-            overflow: hidden;
+            /* overflow: hidden; */
         }
         
+        /* this is he used for background of a4 size */
+        .qradjustment{
+            height: 230px;
+            margin-top: 0;
+        }
+        
+        .Text_Manage{
+            height: 350px;
+        }
+
+        @media print {
+    @page {
+        size: A4 portrait;
+        margin: 30px;
+    }
+
+    html,
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 210mm;
+        height: 297mm;
+        background: white;
+    }
+
+    .preview-container {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 210mm !important;
+        height: 297mm !important;
+    }
+
+    /* .App {
+        width: 210mm !important;
+        height: 297mm !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        border: 5px solid rgb(5, 13, 122) !important;
+        page-break-after: always;
+        page-break-inside: avoid;
+        overflow: hidden !important;
+    } */
+
+    .card {
+        width: 210mm !important;
+        height: 297mm !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .card-body {
+        width: 100% !important;
+        height: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .c-body {
+        width: 100% !important;
+        height: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .first-page,
+    .form-container,
+    .bichme,
+    button,
+    .search-box {
+        display: none !important;
+    }
+}
+
+/* ================================
+   HTML VIEW - A4 CONTENT FIT
+   ================================ */
+
+.second-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* overflow: hidden; */
+}
+
+.second-page #root {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.second-page {
+    width: min(210mm, 100vw) !important;
+    height: 297mm;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    /* overflow: hidden; */
+}
+
+.second-page  {
+    width: 100% !important;
+    max-width: 210mm;
+    height: 297mm;
+    box-sizing: border-box;
+}
+
+.second-page .card {
+    width: 100% !important;
+    max-width: 210mm;
+    height: 297mm;
+    box-sizing: border-box;
+}
+
+.second-page .card-body {
+    width: 100% !important;
+    max-width: 100%;
+    height: 99%;
+    box-sizing: border-box;
+}
+
+.second-page ,
+.second-page {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.second-page  {
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+.c-body {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    margin: 0 auto;
+    border: blue solid 6px; /* 10px से घटाकर 6px किया ताकि अंदर स्पेस बचे */
+    padding: 10px; /* कंटेंट के लिए सुरक्षित गैप */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* कंटेंट को व्यवस्थित रूप से बांटेगा */
+}
+
+/* Long text page ke bahar na nikle */
+.second-page .cert-body {
+    max-width: 100%;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+
+.second-page .cert-body .flex {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Address / long course name */
+.second-page .Address_Rani,
+.second-page #courseName,
+.second-page #studentName,
+.second-page #fatherName {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Footer ko page ke andar rakhe */
+.second-page  {
+    max-width: 100%;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+.heygod{
+    display: flex;
+    flex-direction: column;
+    font-size: 12pt
+}
+.Salaqr{
+    height: 10px;
+}
+
+.weblink{
+    display: flex;
+    color: blue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+
+}
+
+
     
    
     
