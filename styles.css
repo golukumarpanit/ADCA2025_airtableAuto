@@ -17,13 +17,7 @@
 .badmesamjhe{
     margin-left: 100px;
 }
-.radhekrishan{
-    margin-top: -3%;
-    /* height: 100px; */
-   
-    
-    
-}
+
 .rollanddob{
     display: flex;
     padding-top: 5px;
@@ -44,7 +38,7 @@
     width: 210mm;
     height: 297mm;
     box-sizing: border-box; /* बॉडर और पैडिंग को A4 साइज के अंदर ही रखेगा */
-    margin: 0 auto;
+    /* margin: 0 auto; */
     page-break-after: always;
     display: flex;
     justify-content: center;
@@ -88,9 +82,16 @@
     width: 100%;
     white-space: nowrap;
 }
-.fonttitle{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 12pt;
+@font-face {
+  font-family: 'MyCambria';
+  src: url('./Cambria-Font-For-Windows.woff') format('woff');
+}
+
+.fonttitle {
+  font-family: 'MyCambria', serif;
+  font-size: 14pt;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
 }
 .cert-cursive {
     font-family: 'Cookie', cursive;
@@ -99,32 +100,39 @@
     color: black
     
 }
-.dob-underline {
-    display: inline-flex;
-    justify-content: center;
-    flex-grow: 1;
-    
-    /* 1. Border-bottom हटा दिया गया है */
-    border-bottom: none; 
-
-    /* 2. Dotted line के लिए linear-gradient */
-    background-image: linear-gradient(to right, black 50%, transparent 50%);
-    background-size: 8px 3px;         /* डॉट्स की मोटाई 4px से घटाकर 3px की गई */
-    background-repeat: repeat-x;
-    
-    /* 3. टेक्स्ट और डॉट्स की दूरी कम करने के लिए सेटिंग्स */
-    line-height: -3;                 /* टेक्स्ट का बॉटम गैप खत्म करने के लिए */
-    padding-bottom: 0px;              /* हल्का सा गैप */
-    background-position: bottom 1px left 0; /* डॉट्स को थोड़ा ऊपर खिसकाने के लिए */
-
-    text-transform: uppercase;
-    font-family: 'Times New Roman', serif;
-    font-weight: bolder;
-    font-size: 12pt;
+.flex {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
 }
 
+.Roll_nub {
+    white-space: nowrap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.dob-underline {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    border-bottom: 3px dotted black;
+    text-align: center;
+    white-space: nowrap;
+
+    /* Har device aur browser ke liye font stack */
+    font-family: 'Times New Roman', 'Tinos', Times, serif;
+    -webkit-font-smoothing: antialiased;
+    text-transform: uppercase;
+}
+
+
 .Location_Point{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', 'Tinos', Times, serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 14pt;
+    
+
 }
 .Address_Rani {
     display: inline-flex;            /* Taaki yeh bache hue space me hi kaam kare */
@@ -133,7 +141,8 @@
     border-bottom: 4px dotted black; /* Moti dotted underline */
     /* padding-bottom: 2px;             Text aur dots ke beech ki duri */
     text-transform: uppercase;      
-    font-family: 'Times New Roman', serif;
+    font-family: 'Times New Roman', 'Tinos', Times, serif;
+    -webkit-font-smoothing: antialiased;
     font-weight: 400;
     font-size: 13pt;
     
@@ -143,11 +152,11 @@
 .ManageSingh {
     display: flex;
     width: 100%;
-    height: 140px;
+    height: 105px;
     min-height: 100px;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 
 .ManageSingh img {
@@ -441,11 +450,13 @@ margin-left: 55px;
             margin-top: 0;
         }
         
-        .Text_Manage{
+        /* .Text_Manage{
             height: 350px;
-        }
+        } */
 
-        @media print {
+    
+    /* it's Starting point of Printing */
+    @media print {
     @page {
         size: A4 portrait;
         margin: 30px;
@@ -466,10 +477,10 @@ margin-left: 55px;
         width: 210mm !important;
         height: 297mm !important;
     }
-
-    /* .App {
-        width: 210mm !important;
-        height: 297mm !important;
+/* yahi border decide krta hai  */
+    .App {
+        width: 100% !important;   /* dono taraf 4% ka barabar gap */
+    height: 100% !important;  /* upar niche 3% ka barabar gap */
         margin: 0 !important;
         padding: 0 !important;
         box-sizing: border-box !important;
@@ -477,7 +488,7 @@ margin-left: 55px;
         page-break-after: always;
         page-break-inside: avoid;
         overflow: hidden !important;
-    } */
+    }
 
     .card {
         width: 210mm !important;
@@ -507,39 +518,41 @@ margin-left: 55px;
         display: none !important;
     }
 }
+/* it's end of print styles */
+
 
 /* ================================
    HTML VIEW - A4 CONTENT FIT
    ================================ */
 
-.second-page {
+/* .second-page {
     width: 100%;
     display: flex;
     justify-content: center;
-    /* overflow: hidden; */
-}
+     overflow: hidden; 
+} */
 
 .second-page #root {
     width: 100%;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
-.second-page {
+/* .second-page {
     width: min(210mm, 100vw) !important;
     height: 297mm;
     max-width: 100%;
     box-sizing: border-box;
     margin: 0 auto;
-    /* overflow: hidden; */
-}
+    overflow: hidden;
+} */
 
-.second-page  {
+/* .second-page  {
     width: 100% !important;
     max-width: 210mm;
     height: 297mm;
     box-sizing: border-box;
-}
+} */
 
 .second-page .card {
     width: 100% !important;
@@ -614,7 +627,10 @@ margin-left: 55px;
 .heygod{
     display: flex;
     flex-direction: column;
-    font-size: 12pt
+    /* font-size: 12pt */
+    font-family: 'Times New Roman', 'Tinos', Times, serif;
+    -webkit-font-smoothing: antialiased;
+
 }
 .Salaqr{
     height: 10px;
