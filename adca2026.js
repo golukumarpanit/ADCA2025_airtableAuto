@@ -90,26 +90,50 @@ async function fetchFullData() {
 
 // 🔹 Text fields show करने वाला function
 function displayFields(fields) {
+  const course = fields['SELECT_COURSE'] || "N/A";
+  
   document.getElementById("RollNubid").innerText = fields['ROLL_NUB'] || "N/A";
   document.getElementById("studentName").innerText = fields['NAME'] || "N/A";
   document.getElementById("fatherName").innerText = fields['FATHERS_NAME'] || "N/A";
   document.getElementById("DOBfatch").innerText = fields['DOB'] || "N/A";
-  document.getElementById("courseName").innerText = fields['SELECT_COURSE'] || "N/A";
+  document.getElementById("courseName").innerText = course;
   document.getElementById("qrc").innerText = fields['Ms_Nub'] || "N/A";
-  // document.getElementById("englishspeed").innerText = fields['English_Typ'] || "N/A";
-  // document.getElementById("hindispeed").innerText = fields['Hindi_Typ'] || "N/A";
+  
+  // ⚡ कोर्स के नाम के आधार पर Duration (TWELVE या SIX) तय करने का लॉजिक
+  const durationElement = document.getElementById("selectedDuration");
+  
+  if (course === "Advance Diploma in Computer Application") {
+    durationElement.innerText = "TWELVE";
+  } else if (course === "Diploma in Computer Application") {
+    durationElement.innerText = "SIX";
+  } else if (course === "N/A" || course === "") {
+    durationElement.innerText = ""; // Blank if no course
+  } else {
+    durationElement.innerText = "INVALID"; // Invalid for any other course
+  }
+  
   document.title = fields['ROLL_NUB'] || "Certificate Search";
 }
 
 // 🔹 QR और फोटो दिखाने वाला function
 function displayPhotoAndQR(fields) {
+  const fullCourse = fields['SELECT_COURSE'] || "N/A";
+  let qrCourse = fullCourse; // Default fallback
+
+  // ⚡ कोर्स का नाम छोटा (Short Form) करने का लॉजिक
+  if (fullCourse === "Advance Diploma in Computer Application") {
+    qrCourse = "ADCA";
+  } else if (fullCourse === "Diploma in Computer Application") {
+    qrCourse = "DCA";
+  }
+
   const qrData = `
     Certificate No: ${fields['Ms_Nub'] || "N/A"}
     Roll No: ${fields['ROLL_NUB'] || "N/A"}
     Name: ${fields['NAME'] || "N/A"}
     Father's Name: ${fields['FATHERS_NAME'] || "N/A"}
     DOB: ${fields['DOB'] || "N/A"}
-    Course: ADCA
+    Course: ${qrCourse}
   `;
   qr.clear();
   qr.makeCode(qrData);
