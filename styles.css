@@ -11,7 +11,7 @@
     background-color: rgb(56, 44, 221);
     color: white;
     border-radius: 9px;
-    width: 350px;
+    width: 320px;
     font-family: 'Times New Roman', serif;
 }
 .badmesamjhe{
@@ -86,12 +86,26 @@
   font-family: 'MyCambria';
   src: url('./Cambria-Font-For-Windows.woff') format('woff');
 }
+.text-2xl{
+    font-family: 'MyCambria';
+    font-size: 24px;
+    font-weight: bold;
+    
+}
 
 .fonttitle {
-  font-family: 'MyCambria', serif;
-  font-size: 14pt;
-  font-weight: bold;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'MyCambria', Cambria, Georgia, serif;
+      font-size: 20px;
+      line-height: 1.65;
+      color: #222222;
+      /* background-color: #f9f9f9; */
+      margin: 0;
+      /* padding: 40px 20px; */
+      
+      /* Text ko smooth aur sharp banane ke liye */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
 }
 .cert-cursive {
     font-family: 'Cookie', cursive;
@@ -363,7 +377,7 @@ select {
 }       
 #cropperContainer {
     margin-top: 0px;
-    height: 155px;
+    height: 150px;
     width: 140px;
     margin-left: 60px; /* Set your desired height here */
     overflow: hidden;
@@ -446,7 +460,7 @@ margin-left: 55px;
         
         /* this is he used for background of a4 size */
         .qradjustment{
-            height: 230px;
+            height: 210px;
             margin-top: 0;
         }
         
