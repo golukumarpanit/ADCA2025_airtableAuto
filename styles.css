@@ -128,6 +128,7 @@
 
 .dob-underline {
     flex: 1;
+    font-size: 13pt;
     min-width: 0;
     margin: 0;
     border-bottom: 3px dotted black;
@@ -171,6 +172,15 @@
     justify-content: space-between;
     align-items: center;
     /* margin-top: 10px; */
+}
+.ManageSinghtype{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    min-height: 100px;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
 .ManageSingh img {
@@ -375,13 +385,7 @@ select {
     margin: 20px auto;
     border-radius: 5px;
 }       
-#cropperContainer {
-    margin-top: 0px;
-    height: 150px;
-    width: 140px;
-    margin-left: 60px; /* Set your desired height here */
-    overflow: hidden;
-}
+
 #qrcode {
 padding: 0;
 margin: 0;
@@ -450,14 +454,11 @@ margin-left: 55px;
             margin: 20px auto;
             border-radius: 5px;
         }      
-        #cropperContainer {
-            margin-top: 0px;
-            height: 155px;
-            width: 140px;
-            margin-left: 60px; /* Set your desired height here */
-            /* overflow: hidden; */
+        #cropperContainer{
+            display: flex;
+            height: 150px;
+            width: 130px;
         }
-        
         /* this is he used for background of a4 size */
         .qradjustment{
             height: 210px;

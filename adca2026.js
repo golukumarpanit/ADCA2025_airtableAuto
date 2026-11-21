@@ -98,6 +98,11 @@ function displayFields(fields) {
   document.getElementById("DOBfatch").innerText = fields['DOB'] || "N/A";
   document.getElementById("courseName").innerText = course;
   document.getElementById("qrc").innerText = fields['Ms_Nub'] || "N/A";
+
+  //yaha speed call krna hai 
+  document.getElementById("englishspeed").innerText = fields['English_Typ'] ? fields['English_Typ'] + " WPM" : "N/A";
+
+  document.getElementById("hindispeed").innerText = fields['Hindi_Typ'] ? fields['Hindi_Typ'] + " WPM" : "N/A";
   
   // ⚡ कोर्स के नाम के आधार पर Duration (TWELVE या SIX) तय करने का लॉजिक
   const durationElement = document.getElementById("selectedDuration");
@@ -108,9 +113,13 @@ function displayFields(fields) {
     durationElement.innerText = "SIX";
   } else if (course === "N/A" || course === "") {
     durationElement.innerText = ""; // Blank if no course
-  } else {
+  }else if (course === "English And Hindi Typing") {
+    durationElement.innerText = "SIX";
+  }
+   else {
     durationElement.innerText = "INVALID"; // Invalid for any other course
   }
+  
   
   document.title = fields['ROLL_NUB'] || "Certificate Search";
 }
