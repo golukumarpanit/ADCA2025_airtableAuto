@@ -100,9 +100,15 @@ function displayFields(fields) {
   document.getElementById("courseName").innerText = course;
   document.getElementById("qrc").innerText = fields['Ms_Nub'] || "N/A";
   //yaha speed call krna hai 
-  document.getElementById("englishspeed").innerText = fields['English_Typ'] ? fields['English_Typ'] + " WPM" : "N/A";
+  const engEl = document.getElementById("englishspeed");
+if (engEl) {
+  engEl.innerText = fields['English_Typ'] ? fields['English_Typ'] + " WPM" : "N/A";
+}
 
-  document.getElementById("hindispeed").innerText = fields['Hindi_Typ'] ? fields['Hindi_Typ'] + " WPM" : "N/A";
+const hindiEl = document.getElementById("hindispeed");
+if (hindiEl) {
+  hindiEl.innerText = fields['Hindi_Typ'] ? fields['Hindi_Typ'] + " WPM" : "N/A";
+}
 
   // ⚡ कोर्स के नाम के आधार पर Duration (TWELVE या SIX) तय करने का लॉजिक
   const durationElement = document.getElementById("selectedDuration");
